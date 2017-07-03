@@ -1,0 +1,100 @@
+﻿@using System.Web.Optimization;
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Regression Based Forecasting</title>
+
+    @Styles.Render("~/Content/fullcalendarcss")
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/animate.css" rel="stylesheet" />
+    <link type="text/css" href="~/scripts/lib/cupertino/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    <link href="~/Content/css/custom.css" rel="stylesheet" />
+    <link href="~/Content/Custom.css" rel="stylesheet" type="text/css" />
+
+
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+
+
+
+
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" style="width:100px;">
+                        <span class="button-label">Menu</span>
+                        <div class="button-bars">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </div>
+
+                    </button>
+                
+
+                
+                    @Html.ActionLink("Regression Based Forecasting", "Login", "Account", new { area = "" }, new { @class = "navbar-brand" })
+                
+
+            </div>
+            <div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-link">@Html.ActionLink("Weersvoorspelling vandaag", "ForecastToday", "Home")</li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    
+    <div class="container body-content">
+        <div style="margin-top:10px;"></div>
+        @RenderBody()
+        <div class="col-md-12 row" style="margin-top:20%;"></div>
+
+        <footer class="modal-footer navbar-fixed-bottom" style="background-color:white;">
+            <div class="col-md-4" style="text-align:center;">
+                <p>&copy; @DateTime.Now.Year - Mischa Rouleaux</p>
+            </div>
+            
+        </footer>
+    </div>
+
+    <script src="~/scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+    
+
+
+
+
+
+
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".dropdown-toggle").dropdown();
+        });    
+    </script>
+
+
+
+
+</body>
+</html>
