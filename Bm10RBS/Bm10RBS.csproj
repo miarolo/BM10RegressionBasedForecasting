@@ -163,10 +163,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DisplayModels\ForecastModel.cs" />
+    <Compile Include="Models\DisplayModels\ForecastmonthModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BM10VoorspellingService.cs" />
     <Compile Include="ViewModels\Main\ForecastTodayModel.cs" />
     <Compile Include="ViewModels\Main\ForecastTomorrowModel.cs" />
+    <Compile Include="ViewModels\Main\ForecastWeekModel.cs" />
+    <Compile Include="ViewModels\Main\ForecastYearModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -208,8 +212,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ForecastWeek.cshtml" />
     <Content Include="Views\Home\ForecastToday.cshtml" />
-    <Content Include="Views\Home\ForecastYear.cshtml" />
     <Content Include="Views\Home\ForecastTomorrow.cshtml" />
+    <Content Include="Views\Home\ForecastYear.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

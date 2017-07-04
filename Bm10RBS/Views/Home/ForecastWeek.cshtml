@@ -1,5 +1,38 @@
-﻿@{
+﻿@model Bm10RBS.ViewModels.Main.ForecastWeekModel
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
+<div class="col-md-12 row">
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <div class="col-md-12 containerkembit">
+                <h3 style="color:#3897f0"><strong>Weersvoorspelling voor de komende week</strong></h3>
+                <hr style="border-top: 1px solid #d1d1d1" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12" style="margin-bottom:20px;">
+        @foreach(var item in Model.ForecastList)
+        {
+            <div class="col-md-3">
+                <div class="col-md-12 containerkembit">
+                    <h4 style="color:#3897f0">@item.Day, @item.Temperature </h4>
+                    <hr style="border-top: 1px solid #d1d1d1"/>
+                    @if (item.Rain > 0)
+                    { <h5>Het gaat morgen regenen, er zal morgen ongeveer @item.Rain mm regen vallen. De windsnelheid zal ongeveer @item.Wind m/s zijn.</h5>}
+                    @if (item.Rain <= 0)
+                    {  <h5>Het gaat morgen niet regenen! De windsnelheid zal ongeveer @item.Wind m/s zijn.</h5>}
+
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
+
 
 
