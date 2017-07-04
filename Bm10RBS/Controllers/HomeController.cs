@@ -20,7 +20,7 @@ namespace Bm10RBS.Controllers
             using (BM10RBSContext context = new BM10RBSContext())
             {
                 var date = DateTime.Now.Date;
-                var forecast = context.BM10Voorspellingen.Where(p => p.Date == date).FirstOrDefault();
+                var forecast = context.BM10Voorspellingen.Where(p => p.Date.Value == date).FirstOrDefault();
 
 
                 ForecastTodayModel model = new ForecastTodayModel(forecast.Date.Value, forecast.Temperatuur.Value, forecast.SomNeerslag.Value, forecast.Windsnelheid.Value);
@@ -29,6 +29,20 @@ namespace Bm10RBS.Controllers
             }
             
         }
+        public ActionResult ForecastTomorrow()
+        {
+            using (BM10RBSContext context = new BM10RBSContext())
+            {
+                var date = DateTime.Now.AddDays(1).Date;
+                var forecast = context.BM10Voorspellingen.Where(p => p.Date.Value == date).FirstOrDefault();
+
+                ForecastTomorrowModel model = new ForecastTomorrowModel(forecast.Date.Value, forecast.Temperatuur.Value, forecast.SomNeerslag.Value, forecast.Windsnelheid.Value);
+
+                return View(model);
+
+            }
+        }
+
 
         public ActionResult ForecastWeek()
         {

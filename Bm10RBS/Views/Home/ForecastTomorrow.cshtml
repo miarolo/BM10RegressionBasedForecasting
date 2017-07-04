@@ -1,0 +1,51 @@
+﻿@model Bm10RBS.ViewModels.Main.ForecastTomorrowModel
+@{
+    ViewBag.Title = "ForecastTomorrow";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12 row">
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <div class="col-md-12" style="background-color:white; border: 1px solid #e6e6e6; padding:2% 5% 2% 5%; margin-bottom:20px;">
+                <h3><strong>Weersvoorspelling voor morgen</strong></h3>
+                <hr />
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="col-md-12" style="margin-bottom:20px;">
+        <div class="col-md-4">
+            <div class="col-md-12 containerkembit">
+                <h2>Temperatuur</h2>
+                <hr />
+                <h3>De temperatuur wordt morgen: @Model.Temperature graden.</h3>
+
+            </div>
+        </div>
+            
+        <div class="col-md-4">
+            <div class="col-md-12 containerkembit">
+                <h2>Regen</h2>
+                <hr />
+                @if (Model.Rain > 0)
+            { <h3>Het gaat morgen regenen, er zal morgen ongeveer @Model.Rain mm regen vallen.</h3>}
+                @if (Model.Rain <= 0)
+            {  <h3>Het gaat morgen niet regenen!</h3>}
+
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="col-md-12 containerkembit">
+                <h2>Wind</h2>
+                <hr />
+                <h3>Het gaat morgen @Model.Wind m/s waaien.</h3>
+            </div>
+        </div>
+        
+       
+    </div>
+
+</div>
