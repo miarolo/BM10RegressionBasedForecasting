@@ -13,6 +13,20 @@ body {
     background-color: white;
 }
 
+@media (min-width: 768px) {
+    .navbar-nav {
+        float: right;
+        margin: 0;
+    }
+}
+#navbar a {
+    color: #3897f0;
+}
+
+.navbar-default .navbar-brand {
+    color: #3897f0;
+}
+
 /*.navbar {
     margin-bottom: 0px;
 
